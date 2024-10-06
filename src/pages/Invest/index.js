@@ -85,14 +85,9 @@ function Invest() {
     const urnAddress = await cdpContract.urns(1);
     const { ink, art } = await vatContract.urns(ilk, urnAddress);
 
-    // 단위 변환 함수 (BigInt 지원)
-    const toWad = (value) => Number(value) / Number(10n ** 18n); // 10^18 을 BigInt로 표현
-    const toRay = (value) => Number(value) / Number(10n ** 27n); // 10^27 을 BigInt로 표현
-    const toRad = (value) => Number(value) / Number(10n ** 45n); // 10^45 을 BigInt로 표현
-
     const oracleContract = new ethers.Contract(Address.supraOracleAddress, oracleAbi, provider);
     const gasPrice = await oracleContract.getSvalue(260);
-    const convertedValue = Number(gasPrice[3]) / 10 ** 18;
+    const convertedValue = Number(gasPrice[3].toString()) / 10 ** 18;
 
 
     setSystemStatus({
@@ -100,7 +95,7 @@ function Invest() {
       LTV: 66.7,
       eduPrice: convertedValue.toFixed(5),
       deposit: (Number(formattedBalance.toString())).toFixed(2),
-      Issued: Math.floor(toWad(ilkData[0].toString())).toLocaleString()
+      Issued: Math.floor(((Number(ilkData[0])/10**18).toString())).toLocaleString()
     })
 
     
