@@ -89,7 +89,7 @@ function Topnav () {
         <>
         <nav class="">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="https://edbank.xyz/" class="flex items-center">
+            <a href="https://neobankdao.xyz/" class="flex items-center">
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">neobank</span>
                 <div class="pl-20 items-center justify-between hidden w-full md:flex md:w-auto">
                   <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700" style={{marginRight:"20px"}}>

@@ -99,7 +99,7 @@ function Invest() {
       interest: 4,
       LTV: 66.7,
       eduPrice: convertedValue.toFixed(5),
-      deposit: (Number(formattedBalance)).toFixed(2),
+      deposit: (Number(formattedBalance.toString())).toFixed(2),
       Issued: Math.floor(toWad(ilkData[0].toString())).toLocaleString()
     })
 
