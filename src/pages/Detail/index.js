@@ -251,10 +251,9 @@ function Detail() {
 
       try {
         setIsloading(true)
-        const trxReturn = await exitXsdTx(userAccount, mintAmount || 0)
-        // const trxReturn = await frobMint(userAccount, cdpId, 0, mintAmount || 0)
+        const trxReturn = await frobMint(userAccount, cdpId, 0, mintAmount || 0)
         toastTrx(trxReturn)
-        // moveXSD()
+        moveXSD()
         setIsloading(false)
       } catch (error) {
          
